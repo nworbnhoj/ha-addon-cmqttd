@@ -1,2 +1,2 @@
 #!/usr/bin/with-contenv bash
-exec echo TODO
+exec /usr/local/bin/cmqttd --config /config/cmqttd/cmqttd.yaml
