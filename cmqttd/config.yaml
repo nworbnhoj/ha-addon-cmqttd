@@ -1,0 +1,12 @@
+name: CMQTTD
+slug: cmqttd
+version: "0.1.0"
+description: Clipsal C-Bus MQTT bridge
+startup: services
+boot: auto
+arch:
+  - amd64
+  - aarch64
+  - armv7
+options: {}
+schema: {}
