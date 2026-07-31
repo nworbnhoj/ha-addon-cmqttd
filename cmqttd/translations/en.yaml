@@ -1,1 +1,3 @@
-configuration: {}
+configuration:
+  connection:
+    name: Connection Type

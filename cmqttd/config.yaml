@@ -1,12 +1,72 @@
 name: CMQTTD
 slug: cmqttd
-version: "0.1.0"
-description: Clipsal C-Bus MQTT bridge
+description: Clipsal C-Bus to MQTT bridge
+version: "0.2.0-dev"
+url: https://github.com/micolous/cbus
+
+image: ghcr.io/<github-owner>/{arch}-addon-cmqttd
+
 startup: services
 boot: auto
+init: false
+
 arch:
   - amd64
   - aarch64
   - armv7
-options: {}
-schema: {}
+
+services:
+  - mqtt:want
+
+uart: true
+udev: true
+host_network: false
+
+map:
+  - addon_config:rw
+  - share:rw
+
+options:
+  connection: usb
+  serial_port: ""
+  cni_host: ""
+  cni_port: 10001
+
+  auto_mqtt: true
+  mqtt_host: ""
+  mqtt_port: 1883
+  mqtt_username: ""
+  mqtt_password: ""
+
+  cbus_network: 254
+  applications:
+    - lighting
+
+  discovery: true
+
+  log_level: info
+  log_cbus: false
+  log_mqtt: false
+  log_packets: false
+
+  extra_args: ""
+
+schema:
+  connection: list(usb|ethernet)
+  serial_port: device(subsystem=tty)?
+  cni_host: str?
+  cni_port: port?
+  auto_mqtt: bool
+  mqtt_host: str?
+  mqtt_port: port
+  mqtt_username: str?
+  mqtt_password: password?
+  cbus_network: int(0,255)
+  applications:
+    - list(lighting|trigger_control|measurement|enable_control)
+  discovery: bool
+  log_level: list(trace|debug|info|notice|warning|error)
+  log_cbus: bool
+  log_mqtt: bool
+  log_packets: bool
+  extra_args: str?
