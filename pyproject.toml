@@ -1,0 +1,26 @@
+
+[build-system]
+requires=["setuptools>=68","wheel"]
+
+[project]
+name="cmqttd-addon"
+version="0.4.0"
+description="Home Assistant CMQTTD Add-on Runtime"
+requires-python=">=3.12"
+dependencies=[
+  "pydantic>=2,<3",
+  "requests>=2.32"
+]
+
+[project.scripts]
+cmqttd-addon="cmqttd_addon.cli:main"
+
+[tool.ruff]
+line-length=100
+
+[tool.pytest.ini_options]
+testpaths=["tests"]
+
+[tool.mypy]
+python_version="3.12"
+strict=true
