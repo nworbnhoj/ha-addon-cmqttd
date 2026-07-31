@@ -1,23 +1,13 @@
 name: CMQTTD
 slug: cmqttd
 description: Clipsal C-Bus to MQTT bridge
-version: "0.2.0-dev"
+version: "0.3.0-dev"
+image: ghcr.io/nworbnhoj/ha-addon-cmqttd-{arch}
 url: https://github.com/micolous/cbus
-
-image: ghcr.io/<github-owner>/{arch}-addon-cmqttd
-
 startup: services
 boot: auto
-init: false
-
-arch:
-  - amd64
-  - aarch64
-  - armv7
-
-services:
-  - mqtt:want
-
+arch: [amd64,aarch64,armv7]
+services: [mqtt:want]
 uart: true
 udev: true
 host_network: false
