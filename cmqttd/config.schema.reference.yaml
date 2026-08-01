@@ -1,0 +1,41 @@
+
+# Reference schema (development)
+
+connection:
+  type: enum
+  values: [usb, ethernet]
+
+serial_port:
+  type: device
+
+cni_host:
+  type: hostname_or_ip
+
+cni_port:
+  type: port
+
+auto_mqtt:
+  type: bool
+
+mqtt:
+  host: string
+  port: port
+  username: string
+  password: secret
+
+cbus_network:
+  type: integer
+  min: 0
+  max: 255
+
+applications:
+  type: list
+
+discovery:
+  type: bool
+
+log_level:
+  values: [trace, debug, info, warning, error]
+
+advanced:
+  extra_args: string
