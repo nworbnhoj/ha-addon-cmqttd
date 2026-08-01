@@ -1,0 +1,10 @@
+
+configuration:
+  connection:
+    name: Connection
+  serial_port:
+    name: Serial Port
+  cni_host:
+    name: CNI Host
+  discovery:
+    name: MQTT Discovery
