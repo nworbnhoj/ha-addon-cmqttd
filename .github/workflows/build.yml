@@ -12,5 +12,5 @@ jobs:
       matrix:
         arch: [amd64, aarch64, armv7]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: echo "Build add-on for ${{ matrix.arch }}"
