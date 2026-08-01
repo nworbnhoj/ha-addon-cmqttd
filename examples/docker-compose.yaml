@@ -1,0 +1,10 @@
+
+version: "3.9"
+services:
+  cmqttd:
+    image: ghcr.io/nworbnhoj/ha-addon-cmqttd-amd64:dev
+    privileged: true
+    volumes:
+      - ./config:/config
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0

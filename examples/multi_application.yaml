@@ -1,0 +1,7 @@
+
+connection: usb
+serial_port: /dev/serial/by-id/usb-Clipsal_PCI
+applications:
+  - lighting
+  - trigger_control
+  - measurement

@@ -1,0 +1,9 @@
+
+connection: ethernet
+cni_host: 192.168.1.20
+cni_port: 10001
+auto_mqtt: true
+cbus_network: 254
+applications:
+  - lighting
+discovery: true

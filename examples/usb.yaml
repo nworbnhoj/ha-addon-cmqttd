@@ -1,0 +1,8 @@
+
+connection: usb
+serial_port: /dev/serial/by-id/usb-Clipsal_PCI
+auto_mqtt: true
+cbus_network: 254
+applications:
+  - lighting
+discovery: true
