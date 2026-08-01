@@ -1,1 +1,16 @@
-# Phase 6
+
+name: Build
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        arch: [amd64, aarch64, armv7]
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Build add-on for ${{ matrix.arch }}"
