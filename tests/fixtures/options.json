@@ -1,0 +1,6 @@
+
+{
+  "connection": "usb",
+  "auto_mqtt": true,
+  "cbus_network": 254
+}
